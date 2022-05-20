@@ -14593,10 +14593,15 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <li><a href="#0.-Track01873-%28Slakh-Test-Set%29">Track01873</a></li>
 <li><a href="#1.-Mozart-Symphony-No.-40-in-G-minor-K.-550-%28Classical-Music%29">Mozart K550</a></li>
 <li><a href="#2.-In-Bloom---Nirvana-%28Rock%29">In Bloom</a></li>
-<li><a href="#3.-突然好想你---Mayday-(Chinese-pop)">突然好想你</a></li>
+<li><a href="#3.-突然好想你---Mayd(%28Chinese-pop)">突然好想你</a></li>
 <li><a href="#4.-Psycho---Red-Velvet-%28K-pop%29">Psycho</a></li>
 <li><a href="#5.-Lemon---Yonezu-Kenshi-%28J-pop%29">Lemon</a></li>
-<li><a href="#6.-夜に駆ける---YOASOBI-(J-pop)">夜に駆ける</a></li>
+<li><a href="#6.-夜に駆ける---YOASOB(28J-pop)">夜に駆ける</a></li>
+</ol>
+</li>
+<li><a href="#Model-architecture">Model architecture</a><ol>
+<li><a href="#Transcription-module">$f_\text{IR}$</a></li>
+<li><a href="#Music-source-separation-module">$f_\text{MSS}$</a></li>
 </ol>
 </li>
 <li><a href="#Instrumental-wise-Evaluation">Instrumental-wise Evaluation</a><ol>
@@ -14794,7 +14799,8 @@ audio {width:50px}; td {vertical-align: middle}
     <td><audio src="audio/T/YOASOBI/YOASOBI - 夜に駆ける_pred.mp3" controls>alternative text</audio><br/>
     </td>  
  </tr>
-</table>
+</table><p><a href="#Table-of-contents">Back to TOC</a></p>
+
 </div>
 </div>
 </div>
@@ -14883,11 +14889,9 @@ audio {width:50px}; td {vertical-align: middle}
     <td></td>
     <td>Re-mix</td>
     <td><audio src="audio/SS/Track01873/segments/mix_seg.mp3" controls>alternative text</audio><br/></td>
- </tr>           
+ </tr>              
+</table><p><a href="#Table-of-contents">Back to TOC</a></p>
 
-
-
-</table>
 </div>
 </div>
 </div>
@@ -14981,10 +14985,8 @@ audio {width:50px}; td {vertical-align: middle}
     <td><audio src="audio/SS/Mozart_K550/remix.mp3" controls>alternative text</audio><br/></td>
  </tr>        
 
+</table><p><a href="#Table-of-contents">Back to TOC</a></p>
 
-
-
-</table>
 </div>
 </div>
 </div>
@@ -15065,8 +15067,8 @@ audio {width:50px}; td {vertical-align: middle}
     <td><audio src="audio/SS/Nirvana_In_Bloom/seg/remix.mp3" controls>alternative text</audio><br/></td>
  </tr>        
 
+</table><p><a href="#Table-of-contents">Back to TOC</a></p>
 
-</table>
 </div>
 </div>
 </div>
@@ -15194,8 +15196,8 @@ audio {width:50px}; td {vertical-align: middle}
     <td><audio src="audio/SS/Chinese_pop/remix.mp3" controls>alternative text</audio><br/></td>
  </tr>        
 
+</table><p><a href="#Table-of-contents">Back to TOC</a></p>
 
-</table>
 </div>
 </div>
 </div>
@@ -15302,8 +15304,8 @@ audio {width:50px}; td {vertical-align: middle}
     <td><audio src="audio/SS/psycho/seg/remix.mp3" controls>alternative text</audio><br/></td>
  </tr>        
 
+</table><p><a href="#Table-of-contents">Back to TOC</a></p>
 
-</table>
 </div>
 </div>
 </div>
@@ -15411,8 +15413,8 @@ audio {width:50px}; td {vertical-align: middle}
     <td><audio src="audio/SS/lemon/seg/remix.mp3" controls>alternative text</audio><br/></td>
  </tr>        
 
+</table><p><a href="#Table-of-contents">Back to TOC</a></p>
 
-</table>
 </div>
 </div>
 </div>
@@ -15511,9 +15513,86 @@ audio {width:50px}; td {vertical-align: middle}
     <td><audio src="audio/SS/YOASOBI/remix.mp3" controls>alternative text</audio><br/></td>
  </tr>    
 
+</table><p><a href="#Table-of-contents">Back to TOC</a></p>
 
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Model-architecture">Model architecture<a class="anchor-link" href="#Model-architecture">&#182;</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>This figure shows the detail model architecture for jointist. As an example, we assume that the audio clip $X_\text{wav}$ has three different instruments: piano, bass, and guitar.</p>
+<p>The instrument recognition module $f_\text{IR}$ generates the instrument condition $\hat{Y}_\text{cond}$ containing three instruments: piano, bass, and guitar. Then three one-hot vectors ($I^\text{pn}_\text{cond}$, $I^\text{bass}_\text{cond}$, and $I^\text{gtr}_\text{cond}$) are extracted from $\hat{Y}_\text{cond}$ representing piano, bass, and guitar.</p>
+<p>The transcription module $Y_\text{T}$ then takes in the one-hot vectors and iteratively to produce indivual piano roll for each instrument.</p>
+<p>Similiary the source separation module $Y_\text{MSS}$ also takes in the one-hot vectors and iteratively. On top of the instrument condition $I_\text{cond}$, $Y_\text{MSS}$ also takes the transcription result $\hat{Y}_T$ and an extra condition.</p>
 
-</table>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><p style="text-align: center;" width="100%">
+    <img src="./fig/jointist.png"> 
+</p>
+<a href="#Table-of-contents">Back to TOC</a></p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Transcription-module">Transcription module<a class="anchor-link" href="#Transcription-module">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>$f_\text{T}$</p>
+<p><p style="text-align: center;" width="100%">
+    <img src="./fig/T.png"> 
+</p>
+<a href="#Table-of-contents">Back to TOC</a></p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Music-source-separation-module">Music source separation module<a class="anchor-link" href="#Music-source-separation-module">&#182;</a></h3><p>$f_\text{MSS}$</p>
+<p><p style="text-align: center;" width="100%">
+    <img src="./fig/MSS.png"> 
+</p>
+<a href="#Table-of-contents">Back to TOC</a></p>
+
 </div>
 </div>
 </div>
@@ -15544,9 +15623,11 @@ audio {width:50px}; td {vertical-align: middle}
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h4 id="F1-scores">F1 scores<a class="anchor-link" href="#F1-scores">&#182;</a></h4><p>This figure shows the F1 score per instrument evaluated on Slakh2100 test set. In gernal, the model performance is related to the number of training samples avaliable for each instrument.</p>
-<p style="text-align: center;" width="100%">
+<p><p style="text-align: center;" width="100%">
     <img src="./fig/IR_F1.png"> 
 </p>
+<a href="#Table-of-contents">Back to TOC</a></p>
+
 </div>
 </div>
 </div>
@@ -15581,9 +15662,11 @@ audio {width:50px}; td {vertical-align: middle}
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h4 id="Notewise-F1-scores">Notewise F1 scores<a class="anchor-link" href="#Notewise-F1-scores">&#182;</a></h4><p>This figure shows the <strong>notewise</strong> transcription F1 score per instrument evaluated on Slakh2100 test set. The predicted note is assumed correct if its onset is within +-50ms of a ground truth note. This metric does not take offset into consideration. The red verticle line represents the average F1 score across all instruments.</p>
-<p style="text-align: center;" width="100%">
+<p><p style="text-align: center;" width="100%">
     <img  width="40%" src="./fig/Transcription notewise F1.png"> 
 </p>
+<a href="#Table-of-contents">Back to TOC</a></p>
+
 </div>
 </div>
 </div>
