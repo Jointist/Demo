@@ -14579,6 +14579,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Jointist-Demo">Jointist Demo<a class="anchor-link" href="#Jointist-Demo">&#182;</a></h1><p>This page contains the audio samples for the paper <strong>Jointist: Simultaneous Improvement of Multi-instrument Transcription and Music Source Separation via Joint Training</strong>.</p>
+<p><strong>Subjective evaluaiton:</strong> <a href="https://forms.gle/bXEazqjNwAgKfGch9">https://forms.gle/bXEazqjNwAgKfGch9</a></p>
 <p><strong>Source code:</strong> To be released upon acceptance</p>
 
 </div>
@@ -14591,7 +14592,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Table-of-contents">Table of contents<a class="anchor-link" href="#Table-of-contents">&#182;</a></h2><ol>
-<li><a href="#Jointist-Transcription-Examples">Transcription Demo</a><ol>
+<li><a href="#Jointist-v.s.-MT3">Jointist v.s. MT3</a></li>
+<li><a href="#Jointist-Transcription-Examples">Jointist Transcription Demo</a><ol>
 <li><a href="#A.-Mozart-Symphony-No.-40-in-G-minor-K.-550-%28Classical-Music%29">Mozart K550</a></li>
 <li><a href="#B.-In-Bloom---Nirvana-%28Rock%29">In Bloom</a></li>
 <li><a href="#C.-突然好想你---Mayday-%28Chinese-pop%29">突然好想你</a></li>
@@ -14600,7 +14602,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <li><a href="#F.-夜に駆ける---YOASOBI-%28J-pop%29">夜に駆ける</a></li>
 </ol>
 </li>
-<li><a href="#Jointst-Source-Separation-Examples">Source Separation Demo</a><ol>
+<li><a href="#Jointst-Source-Separation-Examples">Jointist Source Separation Demo</a><ol>
 <li><a href="#0.-Track01873-%28Slakh-Test-Set%29">Track01873</a></li>
 <li><a href="#1.-Mozart-Symphony-No.-40-in-G-minor-K.-550-%28Classical-Music%29">Mozart K550</a></li>
 <li><a href="#2.-In-Bloom---Nirvana-%28Rock%29">In Bloom</a></li>
@@ -14685,6 +14687,61 @@ audio::-webkit-media-controls-volume-slider-container {
 
 </div>
 
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Jointist-v.s.-MT3">Jointist v.s. MT3<a class="anchor-link" href="#Jointist-v.s.-MT3">&#182;</a></h2><p>The full audio and midi files are avaliable at: <a href="https://drive.google.com/file/d/1-F2wAALel9UUwMWZdHYZhQb3kIAfAQqL/view?usp=sharing">https://drive.google.com/file/d/1-F2wAALel9UUwMWZdHYZhQb3kIAfAQqL/view?usp=sharing</a></p>
+<p>In general, Jointist is more robust to unseen musical instruments.</p>
+<table border="0">
+
+ <tr>
+    <td style="text-align: left"><b style="font-size:14px">Audio Name</b></td>
+    <td style="text-align: center"><b style="font-size:14px">Beatles<br>Let_It_Be</b></td>
+    <td style="text-align: center"><b style="font-size:14px">JayChou<br>chaorenbuhuifei</b></td>
+    <td style="text-align: center"><b style="font-size:14px">MichaelJackson<br>BlackOrWhite</b></td>
+    <td style="text-align: center"><b style="font-size:14px">Queen<br>IWantToBreakFree</b></td>
+    <td style="text-align: center"><b style="font-size:14px">Radiohead<br>Karma_Police</b></td>
+    <td style="text-align: center"><b style="font-size:14px">RWC<br>RM-P083s</b></td>       
+ </tr>
+
+ <tr>
+    <td style="text-align: left"><b style="font-size:14px">Audio</b></td>
+    <td style="text-align: center">><audio class="myaudio" src="audio/jointist_mt3/Beatles_Let_It_Be_audio_10s.mp3" controls>alternative text</audio><br/>
+    <td style="text-align: center">><audio class="myaudio" src="audio/jointist_mt3/JayChou_chaorenbuhuifei_audio_10s.mp3" controls>alternative text</audio><br/>
+    <td style="text-align: center">><audio class="myaudio" src="audio/jointist_mt3/MichaelJackson_BlackOrWhite_audio_10s.mp3" controls>alternative text</audio><br/>
+    <td style="text-align: center">><audio class="myaudio" src="audio/jointist_mt3/Queen_IWantToBreakFree_audio_10s.mp3" controls>alternative text</audio><br/>
+    <td style="text-align: center">><audio class="myaudio" src="audio/jointist_mt3/Radiohead_Karma_Police_audio_10s.mp3" controls>alternative text</audio><br/>
+    <td style="text-align: center">><audio class="myaudio" src="audio/jointist_mt3/RWC_RM-P083_audio_10s.mp3" controls>alternative text</audio><br/>
+ </tr>
+
+ <tr>
+    <td style="text-align: left"><b style="font-size:14px">MT3</b></td>
+    <td style="text-align: center">><audio class="myaudio" src="audio/jointist_mt3/Beatles_Let_It_Be_mt3_10s.mp3" controls>alternative text</audio><br/>
+    <td style="text-align: center">><audio class="myaudio" src="audio/jointist_mt3/JayChou_chaorenbuhuifei_mt3_10s.mp3" controls>alternative text</audio><br/>
+    <td style="text-align: center">><audio class="myaudio" src="audio/jointist_mt3/MichaelJackson_BlackOrWhite_mt3_10s.mp3" controls>alternative text</audio><br/>
+    <td style="text-align: center">><audio class="myaudio" src="audio/jointist_mt3/Queen_IWantToBreakFree_mt3_10s.mp3" controls>alternative text</audio><br/>
+    <td style="text-align: center">><audio class="myaudio" src="audio/jointist_mt3/Radiohead_Karma_Police_mt3_10s.mp3" controls>alternative text</audio><br/>
+    <td style="text-align: center">><audio class="myaudio" src="audio/jointist_mt3/RWC_RM-P083_mt3_10s.mp3" controls>alternative text</audio><br/>
+ </tr>
+
+ <tr>
+    <td style="text-align: left"><b style="font-size:14px">Jointist</b></td>
+    <td style="text-align: center">><audio class="myaudio" src="audio/jointist_mt3/Beatles_Let_It_Be_jointist_10s.mp3" controls>alternative text</audio><br/>
+    <td style="text-align: center">><audio class="myaudio" src="audio/jointist_mt3/JayChou_chaorenbuhuifei_jointist_10s.mp3" controls>alternative text</audio><br/>
+    <td style="text-align: center">><audio class="myaudio" src="audio/jointist_mt3/MichaelJackson_BlackOrWhite_jointist_10s.mp3" controls>alternative text</audio><br/>
+    <td style="text-align: center">><audio class="myaudio" src="audio/jointist_mt3/Queen_IWantToBreakFree_jointist_10s.mp3" controls>alternative text</audio><br/>
+    <td style="text-align: center">><audio class="myaudio" src="audio/jointist_mt3/Radiohead_Karma_Police_jointist_10s.mp3" controls>alternative text</audio><br/>
+    <td style="text-align: center">><audio class="myaudio" src="audio/jointist_mt3/RWC_RM-P083_jointist_10s.mp3" controls>alternative text</audio><br/>
+    </td>  
+ </tr>
+
+</table>
+</div>
+</div>
+</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
