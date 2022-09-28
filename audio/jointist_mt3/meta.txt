@@ -1,0 +1,12 @@
+Beatles_Let_It_Be: bar1-9
+Beatles_Lucy_In_The_Sky_With_Diamonds: bar87-91
+Beatles_Yellow_Submarine: 64-68
+JayChou_chaorenbuhuifei: 27-32
+JayChou_geiwoyishougedeshijian: 19-24
+JayChou_juhuatai: 47-53
+MichaelJackson_BlackOrWhite: 1-9
+MichaelJackson_IWantYouBack: 11-19
+MichaelJackson_OffTheWall: 1-9
+Queen_IWantToBreakFree: 21-29
+RWC_RM-P083: 1-9
+Radiohead_Karma_Police: 65-74
